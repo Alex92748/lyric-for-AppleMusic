@@ -29,6 +29,13 @@ swift build -c release
 open .build/release/lyric
 ```
 
+### 下载打包好的APP放进/Applications
+
+如果提示文件已损坏（未签名应用）：
+```bash
+xattr -d com.apple.quarantine /Applications/lyric.app
+```
+
 首次运行需要授权：
 - **系统设置 → 隐私与安全性 → 自动化** → 允许 `lyric` 控制 `Music`
 
