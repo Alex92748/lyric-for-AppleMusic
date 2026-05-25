@@ -50,7 +50,10 @@ final class LyricsViewModel: ObservableObject {
 
     private func pollTrack() {
         if let track = bridge.getCurrentTrack() {
-            isPlaying = true
+            if !isPlaying {
+                isPlaying = true
+                calibrate()
+            }
             if track.id != previousTrackId {
                 previousTrackId = track.id
                 trackName = track.name
